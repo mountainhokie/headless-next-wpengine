@@ -1,5 +1,6 @@
 import { client } from "@/lib/utils/apollo";
 import { gql } from "@apollo/client";
+import Head from "next/head";
 
 interface AllPageProps {
   pages: PagesProps;
@@ -24,6 +25,10 @@ export default function Home({ pages }: AllPageProps) {
   console.log(pages);
   return (
     <>
+      <Head>
+        <title>Barebones Headless</title>
+        <meta name="description" content="This is a barebones Headless" />
+      </Head>
       <main className="p-16">
         <h1 className="text-4xl text-center font-bold">Headless Starter</h1>
         {pages.nodes &&
