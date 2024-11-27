@@ -31,7 +31,7 @@ export default function Home({ pages }: AllPageProps) {
     <>
       <Head>
         <title>Barebones Headless</title>
-        <meta content="This is a barebones Headless" />
+        <meta name="description" content="This is a barebones Headless" />
       </Head>
       <Hero />
       <main className="p-16">

@@ -55,7 +55,7 @@ const Copy = () => {
           rel="nofollow"
           className="flex origin-top-left text-black items-center rounded-full border border-zinc-900 bg-white p-0.5 text-sm transition-transform hover:-rotate-2"
         >
-          <span className="rounded-full bg-[#FF6154] px-2 py-0.5 font-medium text-white">
+          <span className="rounded-full bg-[#560700] px-2 py-0.5 font-bold text-white">
             HEY!
           </span>
           <span className="ml-1.5 mr-1 inline-block">
@@ -135,7 +135,7 @@ const Logo = () => {
   return (
     <svg
       width="32"
-      height="auto"
+      height="100%"
       viewBox="0 0 50 39"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
