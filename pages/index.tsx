@@ -1,4 +1,4 @@
-import { Hero } from "@/components/Hero/Hero";
+import HeroForm from "@/components/Hero/HeroForm";
 import { client } from "@/lib/utils/apollo";
 import { gql } from "@apollo/client";
 import Head from "next/head";
@@ -33,7 +33,7 @@ export default function Home({ pages }: AllPageProps) {
         <title>Barebones Headless</title>
         <meta name="description" content="This is a barebones Headless" />
       </Head>
-      <Hero />
+      <HeroForm />
       <main className="p-16">
         {pages.nodes && (
           <ul>
