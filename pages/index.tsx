@@ -1,6 +1,8 @@
+import { Hero } from "@/components/Hero/Hero";
 import { client } from "@/lib/utils/apollo";
 import { gql } from "@apollo/client";
 import Head from "next/head";
+import Link from "next/link";
 
 interface AllPageProps {
   pages: PagesProps;
@@ -19,28 +21,31 @@ interface PageNodes {
 
 interface PageProps {
   title: string;
+  uri: string;
+  slug: string;
 }
 
 export default function Home({ pages }: AllPageProps) {
-  console.log(pages);
+  //console.log(pages);
   return (
     <>
       <Head>
         <title>Barebones Headless</title>
-        <meta name="description" content="This is a barebones Headless" />
+        <meta content="This is a barebones Headless" />
       </Head>
+      <Hero />
       <main className="p-16">
-        <h1 className="text-4xl text-center font-bold">Headless Starter</h1>
-        {pages.nodes &&
-          pages.nodes.map((page) => {
-            console.log(page.title);
-            return (
-              <>
-                {page.title}
-                <br />
-              </>
-            );
-          })}
+        {pages.nodes && (
+          <ul>
+            {pages.nodes.map((page) => {
+              return (
+                <li key={page.title}>
+                  <Link href={`/${page.slug}`}>{page.title}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </main>
     </>
   );
@@ -52,6 +57,8 @@ export async function getStaticProps() {
       pages {
         nodes {
           title
+          uri
+          slug
         }
       }
     }
